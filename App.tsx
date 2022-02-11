@@ -8,39 +8,12 @@
  * @format
  */
 
-import React from 'react';
-import {
-  Dimensions,
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React from 'react';;
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import Back from './src/assets/images/back.svg';
-
-const {width} = Dimensions.get('window')
 const image = require('./src/assets/images/welcome-background.png');
+import MainStackNavigator from './src/navigation/MainStackNavigator';
 const App = () => {
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <ImageBackground style={{flex: 1}} source={image}>
-          <View style={{ flex: 1 }}></View>
-      </ImageBackground>
-      <View style={{flex: 1}}></View>
-    </SafeAreaView>
-  );
+  return <MainStackNavigator />
 };
 
 export default App;
