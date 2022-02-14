@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "868375650195",
+    "project_id": "organicelife-e7ca1",
+    "storage_bucket": "organicelife-e7ca1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868375650195:android:a6413167b174498e4fd266",
+        "android_client_info": {
+          "package_name": "com.organicelife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868375650195-b9ejnf1fv56knmbfu7gosrrl3urnobff.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.organicelife",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "868375650195-78cvt617dl9hrhrle2hivvi8i63109e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVMJEJ9Dx732R4pHETFBsz-byjrbuVLPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868375650195-78cvt617dl9hrhrle2hivvi8i63109e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
