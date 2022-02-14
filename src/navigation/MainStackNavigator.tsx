@@ -1,50 +1,16 @@
-import React, {useMemo, useState} from 'react';
+import React, { useMemo, useState } from 'react';
 import {
-  getFocusedRouteNameFromRoute,
   NavigationContainer,
-  NavigatorScreenParams,
-  Route,
 } from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+import { AuthContext } from './AuthContext';
+import { authenticationScreens } from './ScreenGroups/authenticationScreens';
+import { userScreens } from './ScreenGroups/userScreens';
+import { navigationRef } from './RootNavigator';
 
-
-import {AuthContext} from './AuthContext';
-import Home from '../screens/Home';
-import Login from '../screens/Login';
-import Settings from '../screens/Settings';
-
-type RootStackParamList = {
-  Login: undefined;
-  RootTab: NavigatorScreenParams<RootTabParamList>;
-};
-
-type RootTabParamList = {
-  Home: undefined;
-  Settings: undefined;
-};
-
-const getTabHeaderTitle = (
-  route: Route<'RootTab', NavigatorScreenParams<RootTabParamList>>,
-) => {
-  const routeName = getFocusedRouteNameFromRoute(route);
-
-  switch (routeName) {
-    case 'Home':
-      return 'Home';
-    case 'Settings':
-      return 'Settings';
-    case 'Edit':
-      return 'Edit';
-    default:
-      return 'Home';
-  }
-};
+const { Navigator, Screen } = createStackNavigator();
 
 const MainStackNavigator = () => {
-  const RootStack = createStackNavigator<RootStackParamList>();
-  const RootTab = createBottomTabNavigator<RootTabParamList>();
-
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const authContext = useMemo(
@@ -59,27 +25,23 @@ const MainStackNavigator = () => {
     [],
   );
 
-  const RootTabScreens = () => (
-    <RootTab.Navigator>
-      <RootTab.Screen name="Home" component={Home} options={{headerShown: false}}/>
-      <RootTab.Screen name="Settings" component={Settings}  options={{headerShown: false}}/>
-    </RootTab.Navigator>
-  );
+
 
   return (
     <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        <RootStack.Navigator>
-          {isLoggedIn ? (
-            <RootStack.Screen
-              name="RootTab"
-              component={RootTabScreens}
-              options={{headerShown: false}}
+      <NavigationContainer ref={navigationRef}>
+        <Navigator>
+          {Object.entries({
+            ...(!isLoggedIn ? authenticationScreens : userScreens)
+          }).map(([name, component]) => (
+            <Screen
+              key={name}
+              name={name}
+              component={component}
+              options={{ headerShown: false }}
             />
-          ) : (
-            <RootStack.Screen name="Login" component={Login} options={{headerShown: false}}/>
-          )}
-        </RootStack.Navigator>
+          ))}
+        </Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
   );

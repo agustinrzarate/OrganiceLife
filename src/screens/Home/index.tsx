@@ -1,13 +1,21 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { useAuth } from '../../navigation/AuthContext';
+import { navigate } from '../../navigation/RootNavigator';
+import { ScreenNames } from '../../navigation/ScreenNames';
 
 const Login = () => {
-  const {signOut} = useAuth();
+  const { signOut } = useAuth();
   return (
-    <TouchableOpacity onPress={signOut} >
+    <View>
+      <TouchableOpacity onPress={signOut} >
         <Text>Home</Text>
-    </TouchableOpacity>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ marginTop: 50, backgroundColor: '#000' }} onPress={() => navigate(ScreenNames.Edit)} >
+        <Text>Edit</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 

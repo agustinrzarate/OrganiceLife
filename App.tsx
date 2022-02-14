@@ -10,7 +10,6 @@
 
 import React from 'react';;
 
-const image = require('./src/assets/images/welcome-background.png');
 import MainStackNavigator from './src/navigation/MainStackNavigator';
 const App = () => {
   return <MainStackNavigator />
