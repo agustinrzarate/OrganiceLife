@@ -35,7 +35,7 @@ export const LoginButton = styled.TouchableOpacity`
   justify-content: center;
 `;
 export const TextButton = styled.Text`
-   font-family: ${baseTheme.typography.fonts.primaryMedium};
+    font-family: ${baseTheme.typography.fonts.primary};
     text-align: center;
     font-size: 18px;
     letter-spacing: 7px;

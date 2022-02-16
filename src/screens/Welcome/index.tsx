@@ -9,8 +9,8 @@ const image = require('../../assets/images/background-welcome.png');
 
 const Welcome = () => {
     return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <ImageBackground source={image} style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: '#F3F1F5' }}>
+            <ImageBackground source={image} resizeMode="stretch">
                 <View>
                     <Title>Welcome</Title>
                     <Subtitle>Organize your life</Subtitle>

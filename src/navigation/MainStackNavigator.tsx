@@ -8,6 +8,7 @@ import { authenticationScreens } from './ScreenGroups/authenticationScreens';
 import { userScreens } from './ScreenGroups/userScreens';
 import { navigationRef } from './RootNavigator';
 
+
 const { Navigator, Screen } = createStackNavigator();
 
 const MainStackNavigator = () => {

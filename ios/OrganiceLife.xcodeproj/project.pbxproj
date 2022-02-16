@@ -14,6 +14,13 @@
 		6172F2D35A4C3AA820D92908 /* libPods-OrganiceLife.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-OrganiceLife.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-OrganiceLife-OrganiceLifeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-OrganiceLife-OrganiceLifeTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		74544B1D2F3345DD9F7D71FF /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDBB7C5CEAAA4753808B8DB6 /* Poppins-Bold.ttf */; };
+		803D3751AB9D4CAC94D465B9 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5F4F3B4F8FE4F5D97F9D808 /* Poppins-BoldItalic.ttf */; };
+		8F7A8B7E8A0F45E6A2585A78 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C04F962A0422F91E7DF40 /* Poppins-ExtraLight.ttf */; };
+		9A28047441D242E4809F4675 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C75CF73699E4263A2B5F37E /* Poppins-Medium.ttf */; };
+		6E4CB52C123647598AE1C9CE /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01F6AF21CE64FC9A1E2A3CF /* Poppins-Regular.ttf */; };
+		ED0559A8A1794354821441F5 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C884C900EEB347C4BA740365 /* Roboto-Regular.ttf */; };
+		1EE8650C06024B4591466A09 /* Sailec-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C1946FF9D2BD42C38CFFDE50 /* Sailec-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-OrganiceLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiceLife.debug.xcconfig"; path = "Target Support Files/Pods-OrganiceLife/Pods-OrganiceLife.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-OrganiceLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrganiceLife.release.xcconfig"; path = "Target Support Files/Pods-OrganiceLife/Pods-OrganiceLife.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EDBB7C5CEAAA4753808B8DB6 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F5F4F3B4F8FE4F5D97F9D808 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F2C04F962A0422F91E7DF40 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Poppins-ExtraLight.ttf"; path = "../src/assets/fonts/Poppins-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1C75CF73699E4263A2B5F37E /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B01F6AF21CE64FC9A1E2A3CF /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C884C900EEB347C4BA740365 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C1946FF9D2BD42C38CFFDE50 /* Sailec-Regular.ttf */ = {isa = PBXFileReference; name = "Sailec-Regular.ttf"; path = "../src/assets/fonts/Sailec-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
+				6EC67ADC77B24ADDB24EA3BE /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +163,21 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		6EC67ADC77B24ADDB24EA3BE /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				EDBB7C5CEAAA4753808B8DB6 /* Poppins-Bold.ttf */,
+				F5F4F3B4F8FE4F5D97F9D808 /* Poppins-BoldItalic.ttf */,
+				0F2C04F962A0422F91E7DF40 /* Poppins-ExtraLight.ttf */,
+				1C75CF73699E4263A2B5F37E /* Poppins-Medium.ttf */,
+				B01F6AF21CE64FC9A1E2A3CF /* Poppins-Regular.ttf */,
+				C884C900EEB347C4BA740365 /* Roboto-Regular.ttf */,
+				C1946FF9D2BD42C38CFFDE50 /* Sailec-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +275,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				74544B1D2F3345DD9F7D71FF /* Poppins-Bold.ttf in Resources */,
+				803D3751AB9D4CAC94D465B9 /* Poppins-BoldItalic.ttf in Resources */,
+				8F7A8B7E8A0F45E6A2585A78 /* Poppins-ExtraLight.ttf in Resources */,
+				9A28047441D242E4809F4675 /* Poppins-Medium.ttf in Resources */,
+				6E4CB52C123647598AE1C9CE /* Poppins-Regular.ttf in Resources */,
+				ED0559A8A1794354821441F5 /* Roboto-Regular.ttf in Resources */,
+				1EE8650C06024B4591466A09 /* Sailec-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

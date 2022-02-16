@@ -1,11 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../sagas/root';
-import counterReducer from '../slices/counterSlice';
+import authReducer from '../slices/authSlice'
 const sagaMiddleware = createSagaMiddleware();
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    auth: authReducer,
   },
   middleware: [sagaMiddleware],
 });
