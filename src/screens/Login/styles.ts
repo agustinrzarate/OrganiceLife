@@ -76,7 +76,7 @@ export const TextOption = styled.Text`
 
 export const GoogleLoginButton = styled.TouchableOpacity`
     flex-direction: row; 
-    width: 260px;
+    min-width: 260px;
     height: 50px;
     border-radius: 30px;
     border: 1px;
