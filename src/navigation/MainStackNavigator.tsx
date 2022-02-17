@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   NavigationContainer,
 } from '@react-navigation/native';
@@ -8,44 +8,45 @@ import { authenticationScreens } from './ScreenGroups/authenticationScreens';
 import { userScreens } from './ScreenGroups/userScreens';
 import { navigationRef } from './RootNavigator';
 import { useAppSelector } from '../redux/app/hooks';
+import auth from '@react-native-firebase/auth';
 
 
 const { Navigator, Screen } = createStackNavigator();
 
 const MainStackNavigator = () => {
-  const tokenSelector = useAppSelector(state => state.auth.token);
+  const tokenSelector = useAppSelector(state => state.auth.response);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const authContext = useMemo(
-    () => ({
-      signIn: () => {
-        setIsLoggedIn(true);
-      },
-      signOut: () => {
-        setIsLoggedIn(false);
-      },
-    }),
-    [],
-  );
 
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
 
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  if (initializing) return null;
 
   return (
-    <AuthContext.Provider value={authContext}>
-      <NavigationContainer ref={navigationRef}>
-        <Navigator>
-          {Object.entries({
-            ...(!tokenSelector ? authenticationScreens : userScreens)
-          }).map(([name, component]) => (
-            <Screen
-              key={name}
-              name={name}
-              component={component}
-              options={{ headerShown: false }}
-            />
-          ))}
-        </Navigator>
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <NavigationContainer ref={navigationRef}>
+      <Navigator>
+        {Object.entries({
+          ...(!user ? authenticationScreens : userScreens)
+        }).map(([name, component]) => (
+          <Screen
+            key={name}
+            name={name}
+            component={component}
+            options={{ headerShown: false }}
+          />
+        ))}
+      </Navigator>
+    </NavigationContainer>
   );
 };
 
