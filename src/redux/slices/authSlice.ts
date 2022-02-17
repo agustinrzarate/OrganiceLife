@@ -18,9 +18,6 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    fetchLogin(state) {
-      state.isLoading = true
-    },
     setToken(state, action: PayloadAction<string>) {
       state.isLoading = false;
       state.token = action.payload;
@@ -38,5 +35,5 @@ const authSlice = createSlice({
   },
 });
 
-export const {fetchLogin, setToken, errorAuth, clearState} = authSlice.actions;
+export const { setToken, errorAuth, clearState} = authSlice.actions;
 export default authSlice.reducer;

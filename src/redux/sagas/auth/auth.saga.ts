@@ -1,22 +1,26 @@
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import { put, takeLatest } from 'redux-saga/effects';
-import { authActions } from '../../sagaActions/auth.actions';
+import { authActions } from '../../sagaActions/Auth/auth.actions';
 import { clearState, errorAuth, setToken } from '../../slices/authSlice';
 import { useAppDispatch } from './../../app/hooks';
 
 
 
-export function* login({payload}: any): any {
+export function* login({ payload }: any): any {
+  const {email, password} = payload
   try {
-      yield auth().signInWithEmailAndPassword(payload.user, payload.pass);
-       yield auth().onAuthStateChanged(onAuthStateChanged);
+    console.log(payload);
+     let response = yield auth().signInWithEmailAndPassword(email, password);
+     yield auth().onAuthStateChanged(onAuthStateChanged);
+    console.log(response);
   } catch (error) {
-      yield put(errorAuth(error));
+    yield put(errorAuth(error));
+    console.log('No existis capo')
   }
 }
 
 async function onAuthStateChanged(user: FirebaseAuthTypes.User | null) {
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   if (user) {
     const token = await user.getIdToken();
     dispatch(setToken(token));

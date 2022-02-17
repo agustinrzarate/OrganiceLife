@@ -48,7 +48,6 @@ export const InputLogin = styled.TextInput`
     background: rgba(211, 222, 220, 0.7);
     border-radius: 20px;
     padding: 0 15px;
-    margin-bottom: 15px;
 `;
 
 export const Divisor = styled.View`
@@ -93,3 +92,12 @@ export const TextButtonGoogle = styled.Text`
     color: #6B6B6B;
     letter-spacing: 2px;
 `;
+
+export const TextError = styled.Text`
+    font-family: ${baseTheme.typography.fonts.primary};
+    font-size: 14px;
+    color: #DD4A48;
+    text-align: right;
+    min-height: 22px;
+    margin-right: 15px;
+`

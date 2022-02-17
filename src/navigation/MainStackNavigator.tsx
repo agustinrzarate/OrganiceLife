@@ -7,13 +7,14 @@ import { AuthContext } from './AuthContext';
 import { authenticationScreens } from './ScreenGroups/authenticationScreens';
 import { userScreens } from './ScreenGroups/userScreens';
 import { navigationRef } from './RootNavigator';
+import { useAppSelector } from '../redux/app/hooks';
 
 
 const { Navigator, Screen } = createStackNavigator();
 
 const MainStackNavigator = () => {
+  const tokenSelector = useAppSelector(state => state.auth.token);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-
   const authContext = useMemo(
     () => ({
       signIn: () => {
@@ -33,7 +34,7 @@ const MainStackNavigator = () => {
       <NavigationContainer ref={navigationRef}>
         <Navigator>
           {Object.entries({
-            ...(!isLoggedIn ? authenticationScreens : userScreens)
+            ...(!tokenSelector ? authenticationScreens : userScreens)
           }).map(([name, component]) => (
             <Screen
               key={name}
