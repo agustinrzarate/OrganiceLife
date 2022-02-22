@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import baseTheme from '../../themes/baseTheme';
-export const ContainerLogin = styled.View`
+export const ContainerSignIn = styled.View`
   margin-top: 40px;
   top: 0;
   bottom: 0;
@@ -11,18 +11,20 @@ export const ContainerLogin = styled.View`
   padding: 43px 21px 0;
 `;
 export const Title = styled.Text`
+  max-width: 300px;
   font-size: 36px;
   color: #d3dedc;
   margin-top: 80px;
   letter-spacing: 3px;
   text-align: center;
   font-family: ${baseTheme.typography.fonts.primaryExtraLight};
+  align-self: center;
 `;
 
-export const LoginButton = styled.TouchableOpacity`
+export const SignInButton = styled.TouchableOpacity`
   width: 260px;
   height: 50px;
-  background: #6998ab;
+  background: #1a374d;
   border-radius: 30px;
   justify-content: center;
 `;
@@ -42,7 +44,7 @@ export const InputText = styled.Text`
   margin: 0 0 5px 15px;
 `;
 
-export const InputLogin = styled.TextInput`
+export const InputSignIn = styled.TextInput`
   width: 340px;
   height: 50px;
   background: rgba(211, 222, 220, 0.7);
@@ -73,7 +75,7 @@ export const TextOption = styled.Text`
   background: #ffff;
 `;
 
-export const GoogleLoginButton = styled.TouchableOpacity`
+export const GoogleSignInButton = styled.TouchableOpacity`
   flex-direction: row;
   min-width: 260px;
   height: 50px;

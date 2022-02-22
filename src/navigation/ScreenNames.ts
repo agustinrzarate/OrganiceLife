@@ -1,8 +1,9 @@
 export enum ScreenNames {
-    Welcome = 'Welcome',
-    Login = 'Login',
-    Home = 'Home',
-    Edit = 'Edit',
-    Settings = 'Settings',
-    TabNavigator = 'TabNavigator',
+  Welcome = 'Welcome',
+  Login = 'Login',
+  SignUp = 'SignUp',
+  Home = 'Home',
+  Edit = 'Edit',
+  Today = 'Today',
+  TabNavigator = 'TabNavigator',
 }

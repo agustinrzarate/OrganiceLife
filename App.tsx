@@ -8,16 +8,15 @@
  * @format
  */
 
-import React from 'react'; import { Provider } from 'react-redux';
-;
-
+import React from 'react';
+import {Provider} from 'react-redux';
 import MainStackNavigator from './src/navigation/MainStackNavigator';
-import { store } from './src/redux/app/store';
+import {store} from './src/redux/app/store';
 const App = () => {
   return (
     <Provider store={store}>
       <MainStackNavigator />
     </Provider>
-  )
-}
+  );
+};
 export default App;

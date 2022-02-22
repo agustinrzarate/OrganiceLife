@@ -7,19 +7,18 @@ import {
   SafeAreaView,
   TouchableOpacity,
   View,
-  Keyboard,
 } from 'react-native';
 import {Formik} from 'formik';
 import {Shadow} from 'react-native-shadow-2';
 
 import {
-  ContainerLogin,
+  ContainerSignIn,
   Divisor,
-  GoogleLoginButton,
-  InputLogin,
+  GoogleSignInButton,
+  InputSignIn,
   InputText,
   Line,
-  LoginButton,
+  SignInButton,
   TextButton,
   TextButtonGoogle,
   TextError,
@@ -28,18 +27,15 @@ import {
 } from './styles';
 import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
-import {useAppDispatch, useAppSelector} from './../../redux/app/hooks';
-import {fetchSignIn} from '../../redux/sagaActions/Auth/auth.actions';
-import {errorAuth} from '../../redux/slices/authSlice';
+import {useAppDispatch} from './../../redux/app/hooks';
+import {fetchSignUp} from './../../redux/sagaActions/Auth/auth.actions';
 const image = require('../../assets/images/background-welcome.png');
 const iconGoogle = require('../../assets/images/icons8-google.png');
 const arrow = require('../../assets/images/arrow.png');
 
-const Login = () => {
+const SignUp = () => {
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
-  const errorSelector = useAppSelector(state => state.auth.error);
-
   const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string()
@@ -49,15 +45,7 @@ const Login = () => {
   });
 
   const submit = values => {
-    Keyboard.dismiss();
-    dispatch(fetchSignIn(values));
-  };
-
-  const onFocusEmail = () => {
-    if (!errorSelector) {
-      return;
-    }
-    dispatch(errorAuth(null));
+    dispatch(fetchSignUp(values));
   };
 
   return (
@@ -71,7 +59,7 @@ const Login = () => {
           onPress={() => navigation.goBack()}>
           <Image source={arrow} style={{height: 40, width: 40}} />
         </TouchableOpacity>
-        <Title>Log In to Your Account!</Title>
+        <Title>Create your account!</Title>
         <Formik
           validationSchema={LoginSchema}
           initialValues={{email: '', password: ''}}
@@ -84,7 +72,7 @@ const Login = () => {
             errors,
             isValid,
           }) => (
-            <ContainerLogin
+            <ContainerSignIn
               style={{
                 borderTopStartRadius: 56,
                 borderTopEndRadius: 56,
@@ -93,20 +81,18 @@ const Login = () => {
               }}>
               <View>
                 <InputText>Email :</InputText>
-                <InputLogin
+                <InputSignIn
                   placeholder="Email Address"
                   onChangeText={handleChange('email')}
                   onBlur={handleBlur('email')}
                   value={values.email}
                   keyboardType="email-address"
-                  onFocus={onFocusEmail}
                 />
                 <TextError>{errors.email}</TextError>
               </View>
               <View>
                 <InputText>Password :</InputText>
-                <InputLogin
-                  onFocus={onFocusEmail}
+                <InputSignIn
                   placeholder="Password"
                   onChangeText={handleChange('password')}
                   onBlur={handleBlur('password')}
@@ -115,29 +101,27 @@ const Login = () => {
                 />
                 <TextError>{errors.password}</TextError>
               </View>
-              {errorSelector && <TextError>{errorSelector}</TextError>}
               <Shadow
                 radius={30}
                 distance={6}
                 startColor="#6998ab29"
                 offset={[40, 27]}
                 viewStyle={{alignSelf: 'center', marginTop: 25}}>
-                <LoginButton
+                <SignInButton
                   onPress={() => handleSubmit()}
-                  disabled={!isValid}
-                  style={!isValid ? {opacity: 0.3} : {opacity: 1}}>
-                  <TextButton>LOG IN</TextButton>
-                </LoginButton>
+                  disabled={!isValid}>
+                  <TextButton>SIGN IN</TextButton>
+                </SignInButton>
               </Shadow>
               <Divisor>
                 <Line />
                 <TextOption>or</TextOption>
               </Divisor>
-              <GoogleLoginButton>
-                <TextButtonGoogle>Login with google</TextButtonGoogle>
+              <GoogleSignInButton>
+                <TextButtonGoogle>Sign In with google</TextButtonGoogle>
                 <Image source={iconGoogle} style={{width: 40, height: 40}} />
-              </GoogleLoginButton>
-            </ContainerLogin>
+              </GoogleSignInButton>
+            </ContainerSignIn>
           )}
         </Formik>
       </ImageBackground>
@@ -146,4 +130,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

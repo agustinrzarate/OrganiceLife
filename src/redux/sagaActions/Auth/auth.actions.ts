@@ -1,12 +1,18 @@
 export const authActions = {
-    FETCH_LOGIN : 'FETCH_LOGIN'
-}
+  SIGN_IN: 'SIGN_IN',
+  SIGN_UP: 'SIGN_UP',
+};
 
-export const fetchSignIn = (user) => {
-    console.log("ESTE ES EL ACTION")
-    console.log(user);
-    return {
-        type: authActions.FETCH_LOGIN,
-        payload: user,
-    }
-}
+export const fetchSignIn = user => {
+  return {
+    type: authActions.SIGN_IN,
+    payload: user,
+  };
+};
+
+export const fetchSignUp = user => {
+  return {
+    type: authActions.SIGN_UP,
+    payload: user,
+  };
+};
