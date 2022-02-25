@@ -3,7 +3,7 @@ import {call, put, takeLatest} from 'redux-saga/effects';
 import {
   ErrorTypesAuth,
   MessageErrorTypes,
-} from '../../../utils/Types/errorTypesAuth';
+} from '../../../utils/types/errorTypesAuth';
 import {authActions} from '../../sagaActions/Auth/auth.actions';
 import {errorAuth, getUser} from '../../slices/authSlice';
 

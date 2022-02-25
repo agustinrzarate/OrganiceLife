@@ -2,7 +2,6 @@ import * as React from 'react';
 import Svg, {SvgProps, G, Path, Defs, ClipPath} from 'react-native-svg';
 
 const HomeSvg = (props: SvgProps) => {
-  console.log(props);
   return (
     <Svg width={26} height={26} fill="none" {...props}>
       <G clipPath="url(#a)">

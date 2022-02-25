@@ -26,11 +26,11 @@ import {
   TextOption,
   Title,
 } from './styles';
-import * as Yup from 'yup';
 import {useNavigation} from '@react-navigation/native';
 import {useAppDispatch, useAppSelector} from './../../redux/app/hooks';
 import {fetchSignIn} from '../../redux/sagaActions/Auth/auth.actions';
 import {errorAuth} from '../../redux/slices/authSlice';
+import {LoginSchema} from '../../utils/shemas/LoginSchema';
 const image = require('../../assets/images/background-welcome.png');
 const iconGoogle = require('../../assets/images/icons8-google.png');
 const arrow = require('../../assets/images/arrow.png');
@@ -39,14 +39,6 @@ const Login = () => {
   const navigation = useNavigation();
   const dispatch = useAppDispatch();
   const errorSelector = useAppSelector(state => state.auth.error);
-
-  const LoginSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Required'),
-    password: Yup.string()
-      .min(2, 'Too Short!')
-      .max(14, 'Too Long!')
-      .required('Required'),
-  });
 
   const submit = values => {
     Keyboard.dismiss();
