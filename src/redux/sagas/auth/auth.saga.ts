@@ -27,7 +27,6 @@ export function* handlerError(error: any) {
 export function* login({payload}: any): any {
   const {email, password} = payload;
   try {
-    console.log(payload);
     let response = yield auth().signInWithEmailAndPassword(email, password);
     yield put(getUser(response));
     yield put(errorAuth(null));
